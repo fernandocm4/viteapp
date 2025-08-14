@@ -8,7 +8,7 @@ import Menu from './components/Menu.vue';
 
   <header>
     <ul>
-      <Menu name="Sobre" link="http://www.youtube.com"/>
+      <Menu name="Sobre" link="https://www.google.com/"/>
       <Menu name="Contato" link="http://www.youtube.com"/>
       <Menu name="FAQ" link="http://www.youtube.com"/>
       <Menu name="MyLab" link="http://www.youtube.com"/>
