@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="261mm"
+   height="261mm"
+   viewBox="0 0 261 261"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1"
+     style="display:inline"
+     transform="matrix(9.7261314,0,0,9.7261314,-25.417359,-25.496665)">
+    <circle
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.369025"
+       id="path1-6"
+       cx="16"
+       cy="16"
+       r="13.37804" />
+    <circle
+       style="fill:#00bd7e;fill-opacity:0.2;stroke:none;stroke-width:0.369025"
+       id="path1"
+       cx="16"
+       cy="16"
+       r="13.37804" />
+    <circle
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.287705"
+       id="path1-6-1"
+       cx="16"
+       cy="16"
+       r="10.43" />
+    <circle
+       style="fill:#00bd7e;fill-opacity:1;stroke:none;stroke-width:0.287703"
+       id="path1-8"
+       cx="16"
+       cy="16"
+       r="10.429919" />
+    <circle
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.201104"
+       id="path1-6-1-9"
+       cx="16"
+       cy="16"
+       r="7.2905002" />
+    <circle
+       style="fill:#002d1e;fill-opacity:1;stroke:none;stroke-width:0.200783;stroke-dasharray:none"
+       id="path1-8-1"
+       cx="16"
+       cy="16"
+       r="7.2904081" />
+    <circle
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.103386"
+       id="path1-6-1-9-2"
+       cx="16"
+       cy="16"
+       r="3.7479999" />
+    <circle
+       style="fill:#00bd7e;fill-opacity:1;stroke:none;stroke-width:0.103226;stroke-dasharray:none"
+       id="path1-8-1-2"
+       cx="16"
+       cy="16"
+       r="3.7481215" />
+    <circle
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0437488"
+       id="path1-6-1-9-2-1"
+       cx="16"
+       cy="16"
+       r="1.586" />
+    <circle
+       style="fill:#00bd7e;fill-opacity:0.2;stroke:none;stroke-width:0.0436781;stroke-dasharray:none"
+       id="path1-8-1-2-2"
+       cx="16"
+       cy="16"
+       r="1.5859468" />
+  </g>
+</svg>
