@@ -1,41 +1,29 @@
 @import './base.css';
+@import 'tailwindcss';
+
+
+@theme {
+  --font-montserrat: "Montserrat", sans-serif;
+
+  --color-background-start: #161616;
+  --color-background-center: #111111;
+  --color-background-end: #202020;
+
+  --color-button-start: #1B8600;
+  --color-button-center: #007D0F;
+  --color-button-end: #015104;
+
+  --color-info-box: #242424;
+  --color-info-box-border: #4E4E4E;
+  --color-info-box-second: #2D2D2D;
+}
 
 #app {
-  max-width: 1280px;
+  min-width: 100vh;
   margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 a {
   text-decoration: none;
-}
-
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-}
-
-
-
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 2rem;
-  }
+  color: white;
 }
