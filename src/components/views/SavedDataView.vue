@@ -1,17 +1,10 @@
 <script setup>
+import { onMounted, ref, computed } from 'vue';
 import { apiClient } from '@/api';
-import { ref, onMounted, computed } from 'vue';
-import { useAuth } from '@/auth';
-import { useRouter } from 'vue-router';
-
-const router = useRouter()
-const { isLogged } = useAuth();
 
 const items = ref([]);
 const searchCoin = ref('');
 const error = ref(null);
-const sortDirection = ref('desc');
-const showTopFive = ref(false);
 
 const filteredItems = computed(() => {
     let itemsToDisplay = items.value
@@ -25,20 +18,6 @@ const filteredItems = computed(() => {
         });
     }
 
-    if (showTopFive.value) {
-        itemsToDisplay.sort((a, b) => b.current_price - a.current_price);
-        itemsToDisplay = itemsToDisplay.slice(0, 5);
-    } else {
-        itemsToDisplay.sort((a, b) => {
-            const priceA = a.current_price;
-            const priceB = b.current_price;
-            if (sortDirection.value === 'asc') {
-                return priceA - priceB;
-            } else {
-                return priceB - priceA;
-            }
-        });
-    }
     return itemsToDisplay;
 });
 
@@ -53,65 +32,37 @@ function formatPrice(value) {
     return 'N/A';
 }
 
-function toggleSortDirection() {
-    showTopFive.value = false;
-    sortDirection.value = sortDirection.value === 'asc' ? 'desc' : 'asc';
-}
 
-function toggleTopFive() {
-    showTopFive.value = !showTopFive.value;
-}
-
-const saveData = async () => {
-    try {
-        const reponse = await apiClient('/importar', {
-            method: 'POST'
-        });
-        router.push({ name: 'saved-data' })
-    } catch (error) {
-        console.error('Falha ao salvar dados', error.message);
-    }
-}
 
 onMounted(async () => {
     try {
-        const data = await apiClient('');
+        const data = await apiClient('/importar');
         items.value = data;
     } catch (err) {
         error.value = 'Erro ao buscar dados no servidor: ' + err.message;
         console.error('Erro ao buscar dados no servidor: ', err);
     }
 });
-
 </script>
 
 <template>
+
     <div class="px-[15rem] pt-[10rem] flex flex-col items-center justify-center">
         <div class="flex w-full flex-row mb-[4rem]">
             <span
                 class="z-1 rounded-2xl min-w-[10px] min-h-full mr-4 bg-linear-to-b from-button-start via-button-center to-button-end"></span>
-            <h1 class="text-[2rem] font-extrabold">Cotação atual de criptomoedas</h1>
+            <h1 class="text-[2rem] font-extrabold">Itens salvos</h1>
         </div>
 
         <div class="w-full flex flex-col items-start mb-[2rem]">
             <label class="mb-[10px]" for="search">Pesquise por criptomoedas</label>
+
             <input class="mb-[2rem] border rounded-md h-[2rem] pl-[1rem]" id="search" type="text" v-model="searchCoin"
                 placeholder="Ex.: Bitcoin">
-            <button
-                class="bg-linear-to-r from-button-start via-button-center to-button-end py-[0.5rem] px-[3rem]
-                        rounded-3xl bg-[length:200%_100%] transition-all duration-500 hover:bg-[right_center] hover:cursor-pointer"
-                @click="toggleTopFive">
-                {{ showTopFive ? 'Mostrar tudo' : 'Mostrar Top 5' }}
-            </button>
 
-            <button v-if="isLogged" @click="saveData"
-                class="bg-linear-to-r from-button-start via-button-center to-button-end py-[0.5rem] px-[3rem]
-                        rounded-3xl bg-[length:200%_100%] transition-all duration-500 hover:bg-[right_center] hover:cursor-pointer mt-[1rem]">Salvar info</button>
         </div>
 
     </div>
-
-
 
     <section class="px-[15rem] min-h-screen flex flex-col items-center justify-start">
 
@@ -124,11 +75,8 @@ onMounted(async () => {
                         <th></th>
                         <th>Moeda</th>
                         <th>Símbolo</th>
-                        <th class="hover:cursor-pointer" @click="toggleSortDirection">
-                            Valor
-                            <span v-if="sortDirection === 'asc'">▲</span>
-                            <span v-else>▼</span>
-                        </th>
+                        <th>Valor</th>
+                        <th>Data</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -137,6 +85,7 @@ onMounted(async () => {
                         <td>{{ key.name }}</td>
                         <td class="uppercase">{{ key.symbol }}</td>
                         <td class="text-[1rem]">{{ formatPrice(key.current_price) }}</td>
+                        <td>{{ key.save_data }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -144,20 +93,3 @@ onMounted(async () => {
 
     </section>
 </template>
-
-<style>
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td,
-th {
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #2c2c2c;
-}
-</style>

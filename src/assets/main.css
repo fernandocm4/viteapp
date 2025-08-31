@@ -13,9 +13,9 @@
   --color-button-center: #007D0F;
   --color-button-end: #015104;
 
-  --color-info-box: #242424;
-  --color-info-box-border: #4E4E4E;
-  --color-info-box-second: #2D2D2D;
+  --color-login-box: #242424;
+  --color-login-box-border: #4E4E4E;
+  --color-login-box-second: #2D2D2D;
 }
 
 #app {
@@ -24,6 +24,5 @@
 }
 
 a {
-  text-decoration: none;
   color: white;
 }
