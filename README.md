@@ -1,29 +1,62 @@
-# vue-project
 
-This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+# Crypto+ - Frontend
 
-## Customize configuration
+Frontend simples para usar a API [Crypto+](https://github.com/fernandocm4/cryptoplus-server)
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Sobre o Projeto
 
-## Project Setup
+* [Crypto+](https://sysmaia.com.br)
 
-```sh
-npm install
-```
+## Requisitos
 
-### Compile and Hot-Reload for Development
+* Node 22.18 ou superior
+* Npm (gerenciador de pacotes do Node)
 
-```sh
-npm run dev
-```
+## Instalação
 
-### Compile and Minify for Production
+1.  **Clone o repositório:**
+    ```bash
+    git clone git@github.com:fernandocm4/viteapp.git
+    cd viteapp
+    ```
 
-```sh
-npm run build
-```
+2.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
+
+4. **Configure o ambiente**
+    1. **Copie o conteúdo do arquivo `.env.example` para um novo arquivo chamado `.env`:**
+
+    ```bash
+    cp .env.exemple .env
+    ```
+
+    4. **Cole em** `VITE_APP_API_URL` **a url da api backend (Crypto+):**
+    ```bash
+    #Exemplo
+    VITE_APP_API_URL=http:127.0.0.1:5000
+    ```
+
+5.  **Execute a aplicação:**
+    ```bash
+    npm run dev
+    ```
+    A aplicação estará rodando em `http://localhost:5173/` por padrão.
+
+---
+
+
+## Tecnologias Utilizadas
+
+* **VueJS** - Framework web
+* **Tailwindcss** - Framework para estilização
+
+## Autor
+
+* **Fernando Candido** - [Perfil github](https://github.com/fernandocm4)
+* **Email** - [maiafernando2611@gmail.com](mailto:maiafernando2611@gmail.com)
+
+
