@@ -11,14 +11,14 @@ Frontend simples para usar a API [Crypto+](https://github.com/fernandocm4/crypto
 
 ## Requisitos
 
-* Node 22.18 ou superior
+* Node 22 ou superior
 * Npm (gerenciador de pacotes do Node)
 
 ## Instalação
 
 1.  **Clone o repositório:**
     ```bash
-    git clone git@github.com:fernandocm4/viteapp.git
+    git clone https://github.com/fernandocm4/viteapp.git
     cd viteapp
     ```
 
